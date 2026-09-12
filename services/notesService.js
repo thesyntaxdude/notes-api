@@ -71,7 +71,7 @@ export function update(id, updatedNote) {
 }
 
 export async function remove(id) {
-  const note = findNoteById(id);
+  const note = await findNoteById(id);
   const index = notes.indexOf(note);
   if (note) {
     note.deleted = true;
