@@ -1,5 +1,5 @@
 export default function errorHandler(error, req, res, next) {
-  if (req.headerSent) {
+  if (req.headersSent) {
     next(error);
   }
   console.log(error.stack);
