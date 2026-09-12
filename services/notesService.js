@@ -26,13 +26,7 @@ const notes = [
 
 export function listAllNotes() {
   return new Promise((resolve, reject) => {
-    if (notes.length > 0) {
-      resolve(notes);
-    } else {
-      reject(
-        new AppError("notes is empty. add some notes to get started", 200),
-      );
-    }
+    resolve(notes);
   });
 }
 
@@ -76,7 +70,7 @@ export function update(id, updatedNote) {
   });
 }
 
-export function remove(id) {
+export async function remove(id) {
   const note = findNoteById(id);
   const index = notes.indexOf(note);
   if (note) {
